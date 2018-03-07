@@ -6,47 +6,15 @@
 	<title>Skye Web Browser</title>
 </head>
 
-<style>
-* {
-	margin: 0;
-	padding: 0;
-	font-family: "Arial","Ubuntu",sans-serif;
-}
-</style>
-
 <body>
 	<div id="topbar">
 		<input type="text" id='searchEntry' placeholder="Type URL or Search Google...">
 	</div>
 	<div id="tabs">
-		
+		<div><h1></h1><span></span></div>
 	</div>
-	<webview id="webview" style="width:100vw;height:90vh;"></webview>
-	<script>
-
-	document.getElementById("webview").setAttribute("src","http://google.com");
-
-	function searchSubmit(){
-		var requestedURL = document.getElementById("searchEntry").value;
-
-		if(requestedURL.indexOf(" ")==-1 && requestedURL.indexOf(".")!=-1){
-			requestedURL = "http://" + requestedURL;
-			document.getElementById("webview").setAttribute("src",requestedURL);
-		}else{
-			document.getElementById("webview").setAttribute("src","http://www.google.com/search?q=" + requestedURL);
-		}
-	}
-	document.getElementById("searchEntry").onkeyup=function(e){
-		if(e.keyCode == 13){
-			searchSubmit();
-			updateURL();
-		}
-	}
-	document.getElementById("searchEntry").onfocus=function(){
-		this.select();
-	}
-
-	</script>
+	<webview id="webview"></webview>
+	<script src="assets/js/script.js"></script>
 </body>
 
 </html>
