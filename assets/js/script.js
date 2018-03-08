@@ -1,5 +1,9 @@
 const remote = require('electron').remote;
 
+if(remote.getCurrentWindow().isMaximized()){
+	$("section#windowBtns .maximize").addClass("maximized");
+}
+
 $("section#windowBtns .minimize").on("click",function(){
 	var window = remote.getCurrentWindow();
 	window.minimize();	

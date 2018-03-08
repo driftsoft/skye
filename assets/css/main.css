@@ -4,7 +4,7 @@
 	font-family: "Arial","Ubuntu",sans-serif;
 }
 :root {
-	--main: #8e44ad;
+	--main: #3498db;
 }
 #topbar,#tabs {
 	height: 7vh;
@@ -51,9 +51,14 @@ section#windowBtns button {
 	background-size: 2.5vh;
 	background-position: center;
 	background-repeat: no-repeat;
+	transition: background-color 0.2s;
 }
 section#windowBtns button:hover{
 	background-color: #ccc;
+}
+section#windowBtns button:active{
+	transition: background-color 0s;
+	background-color: #bbb;
 }
 section#windowBtns button.minimize {
 	background-image: url(../img/minimizeIcon.png);
@@ -65,9 +70,10 @@ section#windowBtns button.maximize.maximized{
 	background-image: url(../img/unmaximizeIcon.png);
 }
 section#windowBtns button.close {
+	transition: background-color 0s;
 	background-image: url(../img/closeIcon.png);
 }
 section#windowBtns button.close:hover{
-	background-color: #d00;
+	background-color: #e00;
 	background-image: url(../img/closeHoverIcon.png);
 }
