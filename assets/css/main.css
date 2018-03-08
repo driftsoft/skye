@@ -3,3 +3,22 @@
 	padding: 0;
 	font-family: "Arial","Ubuntu",sans-serif;
 }
+:root {
+	--main: #8e44ad;
+}
+#topbar {
+	height: 7vh;
+	display: block;
+	text-align: center;
+	background-color: #efefef;
+}
+#topbar input {
+	margin: 1vh 0;
+	height: 5vh;
+	width: calc(100% - 2vh - 2px);
+	box-sizing: border-box;
+	padding: 0 0.5vh;
+	font-size: 3vh;
+	background-color: white;
+	outline-color: var(--main);
+}
