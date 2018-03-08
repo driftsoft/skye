@@ -6,7 +6,7 @@
 :root {
 	--main: #8e44ad;
 }
-#topbar {
+#topbar,#tabs {
 	height: 7vh;
 	display: block;
 	text-align: center;
@@ -21,4 +21,8 @@
 	font-size: 3vh;
 	background-color: white;
 	outline-color: var(--main);
+}
+
+#tabs {
+	height: 5vh;
 }

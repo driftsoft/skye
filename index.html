@@ -11,6 +11,12 @@
 <body>
 	<div id="tabs">
 		<div><h1></h1><span></span></div>
+
+		<section>
+			<button class='minimize'>Minimize</button>
+			<button class='maximize'>Maximize</button>
+			<button class='close'>Close</button>
+		</section>
 	</div>
 	<div id="topbar">
 		<input type="text" placeholder="Type URL or Search Google...">
@@ -18,7 +24,10 @@
 	<div id="web">
 		
 	</div>
+
+	<script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
 	<script src="assets/js/jquery.min.js"></script>
+	<script>if (window.module) module = window.module;</script>
 	<script src="assets/js/script.js"></script>
 </body>
 
