@@ -5,12 +5,11 @@ $("#tabs section .minimize").on("click",function(){
 	window.minimize();	
 });
 
-$("#tabs section .minimize").on("click",function(){
-	alert("bruh");
+$("#tabs section .maximize").on("click",function(){
 	var window = remote.getCurrentWindow();
-	if (!window.isMaximized()) {
+	if (!window.isMaximized()){
 		window.maximize();
-	} else {
+	}else{
 		window.unmaximize();
 	}
 });
@@ -19,7 +18,3 @@ $("#tabs section .close").on("click",function(){
 	var window = remote.getCurrentWindow();
 	window.close();
 });
-
-document.getElementById("searchEntry").onfocus=function(){
-	this.select();
-}
