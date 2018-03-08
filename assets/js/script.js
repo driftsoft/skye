@@ -1,11 +1,11 @@
 const remote = require('electron').remote;
 
-$("#tabs section .minimize").on("click",function(){
+$("section#windowBtns .minimize").on("click",function(){
 	var window = remote.getCurrentWindow();
 	window.minimize();	
 });
 
-$("#tabs section .maximize").on("click",function(){
+$("section#windowBtns .maximize").on("click",function(){
 	var window = remote.getCurrentWindow();
 	if (!window.isMaximized()){
 		window.maximize();
@@ -14,7 +14,7 @@ $("#tabs section .maximize").on("click",function(){
 	}
 });
 
-$("#tabs section .close").on("click",function(){
+$("section#windowBtns .close").on("click",function(){
 	var window = remote.getCurrentWindow();
 	window.close();
 });

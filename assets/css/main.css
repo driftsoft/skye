@@ -24,5 +24,43 @@
 }
 
 #tabs {
+	width: calc(100% - 22.5vh);
 	height: 5vh;
+	box-sizing: border-box;
+	border-bottom: 1px solid #ccc;
+	-webkit-app-region: drag;
+}
+section#windowBtns{
+	height: 5vh;
+	width: 22.5vh;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 9999;
+}
+section#windowBtns button {
+	outline: none;
+	width: 7.5vh;
+	height: 5vh;
+	display: block;
+	float: right;
+	border-radius: 0;
+	background-color: #efefef;
+	border: none;
+	border-bottom: 1px solid #ccc;
+	background-size: 2.5vh;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+section#windowBtns button:hover{
+	background-color: #ccc;
+}
+section#windowBtns button.minimize {
+	background-image: url(../img/minimizeIcon.png);
+}
+section#windowBtns button.maximize {
+	background-image: url(../img/maximizeIcon.png);
+}
+section#windowBtns button.close {
+	background-image: url(../img/closeIcon.png);
 }
