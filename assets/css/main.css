@@ -61,6 +61,13 @@ section#windowBtns button.minimize {
 section#windowBtns button.maximize {
 	background-image: url(../img/maximizeIcon.png);
 }
+section#windowBtns button.maximize.maximized{
+	background-image: url(../img/unmaximizeIcon.png);
+}
 section#windowBtns button.close {
 	background-image: url(../img/closeIcon.png);
+}
+section#windowBtns button.close:hover{
+	background-color: #d00;
+	background-image: url(../img/closeHoverIcon.png);
 }

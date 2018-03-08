@@ -18,3 +18,10 @@ $("section#windowBtns .close").on("click",function(){
 	var window = remote.getCurrentWindow();
 	window.close();
 });
+
+remote.getCurrentWindow().on('maximize', function() {
+	$("section#windowBtns .maximize").addClass("maximized");
+});
+remote.getCurrentWindow().on('unmaximize', function() {
+	$("section#windowBtns .maximize").removeClass("maximized");
+});
