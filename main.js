@@ -13,7 +13,7 @@ let mainWindow
 
 function createWindow () {
   // Create the browser window.
-  mainWindow = new BrowserWindow({width: 800, height: 600,frame:false,titleBarStyle: 'hiddenInset'})
+  mainWindow = new BrowserWindow({width: 800, height: 600,frame:false,titleBarStyle: 'hiddenInset','minWidth': 700,'minHeight': 700})
 
   // Remove Menu Bar
   mainWindow.setMenu(null);
