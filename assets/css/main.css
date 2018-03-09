@@ -1,7 +1,7 @@
 * {
 	margin: 0;
 	padding: 0;
-	font-family: "Arial","Ubuntu",sans-serif;
+	font-family: "Arial Narrow","Ubuntu",sans-serif;
 }
 :root {
 	--main: #3498db;
@@ -10,7 +10,7 @@
 	height: 7vh;
 	display: block;
 	text-align: center;
-	background-color: #efefef;
+	background-color: #fefefe;
 }
 #topbar input {
 	margin: 1vh 0;
@@ -24,10 +24,13 @@
 }
 
 #tabs {
-	width: calc(70vw);
+	display: inline-block;
+	max-width: calc(70vw);
 	height: 5vh;
 	box-sizing: border-box;
 	border-bottom: 1px solid #ccc;
+	padding: 0 2.5vh;
+	background-color: white;
 }
 #dragArea {
 	height: 5vh;
@@ -35,7 +38,7 @@
 	top: 0;
 	left: 70vw;
 	width: calc(100% - 22.5vh - 70vw);
-	background-color: #efefef;
+	background-color: white;
 	box-sizing: border-box;
 	border-bottom: 1px solid #ccc;
 	-webkit-app-region: drag;
@@ -55,7 +58,7 @@ section#windowBtns button {
 	display: block;
 	float: right;
 	border-radius: 0;
-	background-color: #efefef;
+	background-color: #fff;
 	border: none;
 	border-bottom: 1px solid #ccc;
 	background-size: 2.5vh;
@@ -86,4 +89,53 @@ section#windowBtns button.close {
 section#windowBtns button.close:hover{
 	background-color: #e00;
 	background-image: url(../img/closeHoverIcon.png);
+}
+
+#tabs div {
+	background-color: #efefef;
+	height: calc(4vh - 1.5px);
+	padding-left: 1.25vh;
+	margin: 0 1.25vh;
+	box-sizing: border-box;
+	border: 2px solid #ccc;
+	border-bottom: none;
+	display: inline-block;
+	vertical-align: text-top;
+	margin-top: 1vh;
+}
+#tabs div.activeTab{
+	height: 4vh;
+	background-color: #fefefe;
+}
+#tabs div.activeTab span:hover{
+	opacity: 0.8;
+}
+#tabs div:hover{
+	cursor: default;
+}
+#tabs div h1 {
+	font-weight: normal;
+	font-size: 2.5vh;
+	line-height: calc(4vh - 1px);
+	display: block;
+	float: left;
+}
+#tabs div span {
+	display: block;
+	float: left;
+	margin: 1vh;
+	margin-top: calc(1vh - 1px);
+	margin-right: none;
+	height: 2vh;
+	width: 2vh;
+	border-radius: 50%;
+	background-image: url(../img/closeLargeIcon.png);
+	background-size: contain;
+	background-position: center;
+	opacity: 0.8;
+}
+#tabs div span:hover{
+	opacity: 0.6;
+	background-image: url(../img/closeLargeHoverIcon.png);
+	background-color: #e00;
 }
