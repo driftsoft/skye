@@ -42,6 +42,17 @@
 #topbar input:not(.activeInput){
 	display: none;
 }
+#topbar button {
+	background-size: 2.5vh;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+#topbar button.back{
+	background-image: url(../img/backIcon.png);
+}
+#topbar button.forward{
+	background-image: url(../img/forwardIcon.png);
+}
 
 #tabs {
 	display: inline-block;
