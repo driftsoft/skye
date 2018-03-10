@@ -15,17 +15,22 @@
 }
 #topbar {
 	width: 100%;
-	border-bottom: 1px solid #ccc;
+	border-bottom: 2px solid #ccc;
 }
 #topbar input {
 	margin: 1vh 0;
 	height: 5vh;
 	width: calc(100% - 2vh - 2px);
 	box-sizing: border-box;
-	padding: 0 0.5vh;
+	padding: 0 1vh;
 	font-size: 1rem;
 	background-color: white;
-	outline-color: var(--main);
+	outline: none;
+	transition: border-color 0.2s;
+	border: 2px solid #ccc;
+}
+#topbar input:focus{
+	border-color: var(--main);
 }
 #topbar input:not(.activeInput){
 	display: none;
@@ -36,7 +41,7 @@
 	max-width: calc(70vw);
 	height: 5vh;
 	box-sizing: border-box;
-	border-bottom: 1px solid #ccc;
+	border-bottom: 2px solid #ccc;
 	padding: 0 2.5vh;
 	background-color: white;
 }
@@ -48,7 +53,7 @@
 	width: calc(100% - 22.5vh - 70vw);
 	background-color: white;
 	box-sizing: border-box;
-	border-bottom: 1px solid #ccc;
+	border-bottom: 2px solid #ccc;
 	-webkit-app-region: drag;
 }
 section#windowBtns{
@@ -68,7 +73,7 @@ section#windowBtns button {
 	border-radius: 0;
 	background-color: #fff;
 	border: none;
-	border-bottom: 1px solid #ccc;
+	border-bottom: 2px solid #ccc;
 	background-size: 2.5vh;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -101,7 +106,7 @@ section#windowBtns button.close:hover{
 
 #tabs div {
 	background-color: #efefef;
-	height: calc(4vh - 1.5px);
+	height: calc(4vh - 2px);
 	padding-left: 1.25vh;
 	margin: 0 1.25vh;
 	box-sizing: border-box;
