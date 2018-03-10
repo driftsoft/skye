@@ -6,6 +6,9 @@
 :root {
 	--main: #3498db;
 }
+body {
+	overflow-x: hidden;
+}
 #topbar,#tabs {
 	height: 7vh;
 	display: block;
@@ -16,7 +19,7 @@
 #topbar {
 	width: 100%;
 	border-bottom: 2px solid #ccc;
-	padding: 0 0.5vh;
+	padding-left: 0.5vh;
 }
 #topbar input,#topbar button {
 	margin: 1vh 0.5vh;

@@ -94,6 +94,12 @@ Mousetrap.bind(['ctrl+shift+z', 'command+shift+z'],function(e){
 	}
 	return false;
 });
+Mousetrap.bind(['ctrl+r', 'command+r'],function(e){
+	if(!$("#topbar input.activeInput").is(":focus")){
+		$("#web webview.activeWeb")[0].reload();
+	}
+	return false;
+});
 
 Mousetrap.bind(['ctrl+w', 'command+w'],function(e){
 	removeTab($("#tabs div").index($("#tabs div.activeTab"))

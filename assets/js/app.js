@@ -116,3 +116,10 @@ $("#tabs button.addTab").on("click",function(){
 $(document).on("resize",function(e){
 	updateDragWidth();
 });
+
+$("#topbar button.back").on("click",function(){
+	$("#web webview.activeWeb")[0].goBack();
+});
+$("#topbar button.forward").on("click",function(){
+	$("#web webview.activeWeb")[0].goForward();
+});
