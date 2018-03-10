@@ -78,7 +78,22 @@ function updateEvents(){
 			var index = $("#tabs div").index($("#tabs div.activeTab"));
 
 			$("#web webview:eq(" + index + ")")[0].loadURL(url);
+
+			$(this).blur();
 		}
+	});
+
+	$("#web webview").off("did-stop-loading");
+	$("#web webview").on("did-stop-loading",function(){
+		var index = $("#web webview").index($(this));
+		if(!$("#topbar input:eq(" + index + ")").is(":focus")){
+			$("#topbar input:eq(" + index + ")").val($(this).attr("src"));
+		}
+	});
+
+	$("#topbar input").off("focus");
+	$("#topbar input").on("focus",function(){
+		$(this)[0].select();
 	});
 }
 
