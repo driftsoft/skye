@@ -61,8 +61,25 @@ function updateEvents(){
 
 		$("#topbar input.activeInput").removeClass("activeInput");
 		$("#topbar input:eq(" + index + ")").addClass("activeInput");
+	});
 
-	})
+	$("#topbar input").off("keydown");
+	$("#topbar input").on("keydown",function(e){
+		if(e.keyCode == 13){
+			var url = $(this).val();
+
+			if(url.indexOf(" ") != -1 || url.indexOf(".") == -1){
+				url = "http://google.com/search?q=" + url;
+			}
+			if(!url.startsWith("http://") && !url.startsWith("file://")){
+				url = "http://" + url;	
+			}
+
+			var index = $("#tabs div").index($("#tabs div.activeTab"));
+
+			$("#web webview:eq(" + index + ")")[0].loadURL(url);
+		}
+	});
 }
 
 function updateDragWidth(){

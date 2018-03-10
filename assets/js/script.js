@@ -41,7 +41,7 @@ Mousetrap.prototype.stopCallback = function(){
 }
 
 Mousetrap.bind(['ctrl+a', 'command+a'],function(e){
-	if($("#topbar input:focus")){
+	if($("#topbar input").is(":focus")){
 		$("#topbar input")[0].select();
 	}
 	return false;
