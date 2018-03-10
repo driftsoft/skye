@@ -71,7 +71,7 @@ function updateEvents(){
 			if(url.indexOf(" ") != -1 || url.indexOf(".") == -1){
 				url = "http://google.com/search?q=" + url;
 			}
-			if(!url.startsWith("http://") && !url.startsWith("file://")){
+			if(!url.startsWith("http://") && !url.startsWith("file://") && !url.startsWith("https://")){
 				url = "http://" + url;	
 			}
 
@@ -89,6 +89,14 @@ function updateEvents(){
 		if(!$("#topbar input:eq(" + index + ")").is(":focus")){
 			$("#topbar input:eq(" + index + ")").val($(this).attr("src"));
 		}
+		var fakeA = document.createElement("a");
+		fakeA.href = $(this).attr("src");
+		fakeA = fakeA.hostname;
+		if(fakeA.startsWith("www.")){
+			fakeA = fakeA.replace("www.","");
+		}
+		$("#tabs div h1:eq(" + index + ")").text(fakeA);
+		updateDragWidth();
 	});
 
 	$("#topbar input").off("focus");
