@@ -1,16 +1,20 @@
 var allTabs = ["https://google.com"];
 
 $(function(){
-	//updateTabs();
-	updateRemoveTabEvent();
+	updateDragWidth();
+	updateEvents();
 });
 
 function addTab(url){
 	allTabs.push(url);
 	$("#tabs div.activeTab").removeClass("activeTab");
-	$("<div class='activeTab'><h1>google.com</h1><span></span>").insertAfter($("#tabs div:eq(" + (allTabs.length-2) +")"))
+	$("<div class='activeTab'><h1>google.com</h1><span></span></div>").insertAfter($("#tabs div:eq(" + (allTabs.length-2) +")"));
 
-	updateRemoveTabEvent();
+	$("#web webview.activeWeb").removeClass("activeWeb");
+	$("<webview class='activeWeb' src='http://google.com'></webview>").insertAfter($("#web webview:eq(" + (allTabs.length-2) +")"));
+
+	updateEvents();
+	updateDragWidth();
 }
 function removeTab(index){
 	allTabs.splice(index,1);
@@ -22,20 +26,44 @@ function removeTab(index){
 	}
 	if($("#tabs div.activeTab").length == 0){
 		if(index == 0){
+			$("#web webview:eq(" + (index) + ")").addClass("activeWeb");
 			$("#tabs div:eq(" + (index) + ")").addClass("activeTab");
 		}else{
+			$("#web webview:eq(" + (index-1) + ")").addClass("activeWeb");
 			$("#tabs div:eq(" + (index-1) + ")").addClass("activeTab");
 		}
 	}
+
+	updateDragWidth();
 }
-function updateRemoveTabEvent(){
+function updateEvents(){
 	$('#tabs div span').off('click');
 	$("#tabs div span").on("click",function(){
 		var index = $("#tabs div").index($(this).parent());
 		removeTab(index);
 	});
+
+	$("#tabs div").off("click");
+	$("#tabs div").on("click",function(e){
+		$("#tabs div.activeTab").removeClass("activeTab");
+		$(this).addClass("activeTab");
+
+		var index = $("#tabs div").index($(this));
+
+		$("#web webview.activeWeb").removeClass("activeWeb");
+		$("#web webview:eq(" + index + ")").addClass("activeWeb");
+	})
+}
+
+function updateDragWidth(){
+	$("#dragArea").css("width","calc(100vw - 22.5vh - " + $("#tabs").outerWidth() + "px)");
 }
 
 $("#tabs button.addTab").on("click",function(){
 	addTab("https://google.com");
+});
+
+
+$(document).on("resize",function(e){
+	updateDragWidth();
 });

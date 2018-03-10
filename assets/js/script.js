@@ -68,6 +68,6 @@ Mousetrap.bind(['ctrl+v', 'command+v'],function(e){
 
 Mousetrap.bind(['ctrl+w', 'command+w'],function(e){
 	removeTab($("#tabs div").index($("#tabs div.activeTab"))
-		)
+		);
 	return false;
 });

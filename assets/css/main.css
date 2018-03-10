@@ -41,7 +41,7 @@
 	height: 5vh;
 	position: absolute;
 	top: 0;
-	left: 70vw;
+	right: 22.5vh;
 	width: calc(100% - 22.5vh - 70vw);
 	background-color: white;
 	box-sizing: border-box;
@@ -168,4 +168,7 @@ section#windowBtns button.close:hover{
 #web webview {
 	height: calc(88vh - 4px);
 	width: 100%;
+}
+#web webview:not(.activeWeb){
+	display: none;
 }
