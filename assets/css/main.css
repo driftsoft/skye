@@ -16,6 +16,7 @@
 #topbar {
 	width: 100%;
 	border-bottom: 2px solid #ccc;
+	padding: 0 0.5vh;
 }
 #topbar input,#topbar button {
 	margin: 1vh 0.5vh;
@@ -29,10 +30,11 @@
 	transition: border-color 0.2s;
 	border: 2px solid #ccc;
 	vertical-align: text-top;
+	float: left;
 }
 #topbar input {
-	margin: 1vh 0;
-	width: calc(100% - 13vh - 12px);
+	margin-right: 0;
+	width: calc(100% - 12.5vh - 12px);
 }
 #topbar input:focus,#topbar button:hover{
 	border-color: var(--main);
