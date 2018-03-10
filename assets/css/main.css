@@ -27,6 +27,9 @@
 	background-color: white;
 	outline-color: var(--main);
 }
+#topbar input:not(.activeInput){
+	display: none;
+}
 
 #tabs {
 	display: inline-block;

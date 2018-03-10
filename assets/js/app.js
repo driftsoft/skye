@@ -13,6 +13,9 @@ function addTab(url){
 	$("#web webview.activeWeb").removeClass("activeWeb");
 	$("<webview class='activeWeb' src='http://google.com'></webview>").insertAfter($("#web webview:eq(" + (allTabs.length-2) +")"));
 
+	$("#topbar input.activeInput").removeClass("activeInput");
+	$('<input class="activeInput" type="text" placeholder="Type URL or Search Google...">').insertAfter($("#topbar input:eq(" + (allTabs.length-2) +")"));
+
 	updateEvents();
 	updateDragWidth();
 }
@@ -20,6 +23,7 @@ function removeTab(index){
 	allTabs.splice(index,1);
 	$("#tabs div:eq(" + index +")").remove();
 	$("#web webview:eq(" + index +")").remove();
+	$("#topbar input:eq(" + index + ")").remove();
 
 	if(allTabs.length==0){
 		remote.getCurrentWindow().close();
@@ -28,9 +32,11 @@ function removeTab(index){
 		if(index == 0){
 			$("#web webview:eq(" + (index) + ")").addClass("activeWeb");
 			$("#tabs div:eq(" + (index) + ")").addClass("activeTab");
+			$("#topbar input:eq(" + (index) + ")").addClass("activeInput");
 		}else{
 			$("#web webview:eq(" + (index-1) + ")").addClass("activeWeb");
 			$("#tabs div:eq(" + (index-1) + ")").addClass("activeTab");
+			$("#topbar input:eq(" + (index-1) + ")").addClass("activeInput");
 		}
 	}
 
@@ -52,6 +58,10 @@ function updateEvents(){
 
 		$("#web webview.activeWeb").removeClass("activeWeb");
 		$("#web webview:eq(" + index + ")").addClass("activeWeb");
+
+		$("#topbar input.activeInput").removeClass("activeInput");
+		$("#topbar input:eq(" + index + ")").addClass("activeInput");
+
 	})
 }
 
@@ -62,7 +72,6 @@ function updateDragWidth(){
 $("#tabs button.addTab").on("click",function(){
 	addTab("https://google.com");
 });
-
 
 $(document).on("resize",function(e){
 	updateDragWidth();
