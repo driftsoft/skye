@@ -17,10 +17,10 @@
 	width: 100%;
 	border-bottom: 2px solid #ccc;
 }
-#topbar input {
-	margin: 1vh 0;
+#topbar input,#topbar button {
+	margin: 1vh 0.5vh;
 	height: 5vh;
-	width: calc(100% - 2vh - 2px);
+	width: 5vh;
 	box-sizing: border-box;
 	padding: 0 1vh;
 	font-size: 1rem;
@@ -28,8 +28,13 @@
 	outline: none;
 	transition: border-color 0.2s;
 	border: 2px solid #ccc;
+	vertical-align: text-top;
 }
-#topbar input:focus{
+#topbar input {
+	margin: 1vh 0;
+	width: calc(100% - 13vh - 12px);
+}
+#topbar input:focus,#topbar button:hover{
 	border-color: var(--main);
 }
 #topbar input:not(.activeInput){
