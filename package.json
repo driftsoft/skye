@@ -1,5 +1,6 @@
 {
   "name": "Skye",
+  "productName": "Skye",
   "version": "1.0.0",
   "description": "An Easy to Use, Beautiful Web Browser.",
   "main": "main.js",
@@ -9,6 +10,8 @@
   "author": "Driftsoft",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "~1.7.8"
+    "electron": "~1.7.8",
+    "electron-builder": "^20.4.1",
+    "electron-packager": "^11.1.0"
   }
 }
