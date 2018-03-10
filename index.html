@@ -10,8 +10,7 @@
 
 <body>
 	<div id="tabs">
-		<div><h1>google.com</h1><span></span></div
-		><div class='activeTab'><h1>google.com</h1><span></span></div>
+		<div class='activeTab'><h1>google.com</h1><span></span></div>
 		<button class="addTab"></button>
 	</div>
 	<div id="dragArea"></div>
@@ -24,7 +23,7 @@
 		<input type="text" placeholder="Type URL or Search Google...">
 	</div>
 	<div id="web">
-		
+		<webview src='http://google.com'></webview>
 	</div>
 
 	<script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
@@ -32,6 +31,7 @@
 	<script src="assets/js/mousetrap.min.js"></script>
 	<script>if (window.module) module = window.module;</script>
 	<script src="assets/js/script.js"></script>
+	<script src="assets/js/app.js"></script>
 </body>
 
 </html>

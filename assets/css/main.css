@@ -11,6 +11,11 @@
 	display: block;
 	text-align: center;
 	background-color: #fefefe;
+	float: left;
+}
+#topbar {
+	width: 100%;
+	border-bottom: 1px solid #ccc;
 }
 #topbar input {
 	margin: 1vh 0;
@@ -143,7 +148,7 @@ section#windowBtns button.close:hover{
 
 #tabs button.addTab {
 	outline: none;
-	width: 5vh;
+	width: 4vh;
 	height: 2.5vh;
 	margin: 0.75vh 0;
 	margin-top: calc(1.75vh - 1px);
@@ -151,11 +156,16 @@ section#windowBtns button.close:hover{
 	float: left;
 	vertical-align: text-top;
 	background-color: #efefef;
-	border: 1px solid #ccc;
+	border: 2px solid #ccc;
 }
 #tabs button.addTab:hover {
 	background-color: #dedede;
 }
 #tabs button.addTab:active {
 	background-color: #ccc;
+}
+
+#web webview {
+	height: calc(88vh - 4px);
+	width: 100%;
 }
