@@ -59,7 +59,6 @@ body {
 
 #tabs {
 	display: inline-block;
-	max-width: calc(70vw);
 	height: 5vh;
 	box-sizing: border-box;
 	border-bottom: 2px solid #ccc;
@@ -71,7 +70,6 @@ body {
 	position: absolute;
 	top: 0;
 	right: 22.5vh;
-	width: calc(100% - 22.5vh - 70vw);
 	background-color: white;
 	box-sizing: border-box;
 	border-bottom: 2px solid #ccc;
@@ -196,8 +194,14 @@ section#windowBtns button.close:hover{
 
 #web webview {
 	height: calc(88vh - 4px);
-	width: 100%;
+	width: 100vw;
 }
+
+#web webview object {
+	width: 100vw;
+	height: 100%;
+}
+
 #web webview:not(.activeWeb){
 	display: none;
 }

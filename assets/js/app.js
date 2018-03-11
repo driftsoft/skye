@@ -3,6 +3,12 @@ var allTabs = ["https://google.com"];
 $(function(){
 	updateDragWidth();
 	updateEvents();
+
+	if(isMac){
+		$("#dragArea").css("right","0");
+		$("#windowBtns").remove();
+		$("#tabs").attr("style","padding-left: 10vh;");
+	}
 });
 
 function addTab(url){
@@ -106,7 +112,12 @@ function updateEvents(){
 }
 
 function updateDragWidth(){
-	$("#dragArea").css("width","calc(100vw - 22.5vh - " + $("#tabs").outerWidth() + "px)");
+	$("#dragArea").css("width","0");
+	if(isMac){
+		$("#dragArea").css("width","calc(100vw - " + $("#tabs").outerWidth() + "px)");
+	}else{
+		$("#dragArea").css("width","calc(100vw - 22.5vh - " + $("#tabs").outerWidth() + "px)");
+	}
 }
 
 $("#tabs button.addTab").on("click",function(){

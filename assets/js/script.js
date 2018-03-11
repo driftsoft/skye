@@ -2,6 +2,12 @@ const remote = require('electron').remote;
 
 const {clipboard} = require('electron')
 
+var isMac = false;
+
+if (process.platform == 'darwin') {
+  isMac = true;
+}
+
 if(remote.getCurrentWindow().isMaximized()){
 	$("section#windowBtns .maximize").addClass("maximized");
 }
@@ -30,6 +36,13 @@ remote.getCurrentWindow().on('maximize', function() {
 });
 remote.getCurrentWindow().on('unmaximize', function() {
 	$("section#windowBtns .maximize").removeClass("maximized");
+});
+
+remote.getCurrentWindow().on('enter-full-screen', function() {
+	$("#tabs").removeAttr("style");
+});
+remote.getCurrentWindow().on('leave-full-screen', function() {
+	$("#tabs").attr("style","padding-left: 10vh;");
 });
 
 Mousetrap.prototype.stopCallback = function(){
