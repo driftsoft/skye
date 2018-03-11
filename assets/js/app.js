@@ -22,6 +22,8 @@ function addTab(url){
 	$("#topbar input.activeInput").removeClass("activeInput");
 	$('<input class="activeInput" type="text" placeholder="Type URL or Search Google...">').insertAfter($("#topbar input:eq(" + (allTabs.length-2) +")"));
 
+	$("#topbar input.activeInput").focus();
+
 	updateEvents();
 	updateDragWidth();
 }
@@ -45,6 +47,7 @@ function removeTab(index){
 			$("#topbar input:eq(" + (index-1) + ")").addClass("activeInput");
 		}
 	}
+	$("#topbar input.activeInput").focus();
 
 	updateDragWidth();
 }
@@ -67,6 +70,8 @@ function updateEvents(){
 
 		$("#topbar input.activeInput").removeClass("activeInput");
 		$("#topbar input:eq(" + index + ")").addClass("activeInput");
+
+		$("#topbar input.activeInput").focus();
 	});
 
 	$("#topbar input").off("keydown");
