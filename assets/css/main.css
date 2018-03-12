@@ -93,7 +93,7 @@ section#windowBtns button {
 	background-color: #fff;
 	border: none;
 	border-bottom: 2px solid #ccc;
-	background-size: 2.5vh;
+	background-size: 2vh;
 	background-position: center;
 	background-repeat: no-repeat;
 	transition: background-color 0.2s;
@@ -115,7 +115,6 @@ section#windowBtns button.maximize.maximized{
 	background-image: url(../img/unmaximizeIcon.png);
 }
 section#windowBtns button.close {
-	transition: background-color 0s;
 	background-image: url(../img/closeIcon.png);
 }
 section#windowBtns button.close:hover{
@@ -162,14 +161,15 @@ section#windowBtns button.close:hover{
 	height: 2vh;
 	width: 2vh;
 	border-radius: 50%;
-	background-image: url(../img/closeLargeIcon.png);
-	background-size: contain;
+	background-image: url(../img/closeIcon.png);
+	background-size: 1vh;
+	background-repeat: no-repeat;
 	background-position: center;
 	opacity: 0.8;
 }
 #tabs div span:hover{
 	opacity: 0.6;
-	background-image: url(../img/closeLargeHoverIcon.png);
+	background-image: url(../img/closeHoverIcon.png);
 	background-color: #e00;
 }
 
