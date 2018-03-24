@@ -14,15 +14,17 @@ $(function(){
 function addTab(url){
 	allTabs.push(url);
 	$("#tabs div.activeTab").removeClass("activeTab");
-	$("<div class='activeTab'><h1>google.com</h1><span></span></div>").insertAfter($("#tabs div:eq(" + (allTabs.length-2) +")"));
+	$("<div class='activeTab'><h1>New Tab</h1><span></span></div>").insertAfter($("#tabs div:eq(" + (allTabs.length-2) +")"));
 
 	$("#web webview.activeWeb").removeClass("activeWeb");
-	$("<webview class='activeWeb' src='http://google.com'></webview>").insertAfter($("#web webview:eq(" + (allTabs.length-2) +")"));
+	$("<webview class='activeWeb' src='" + url + "'></webview>").insertAfter($("#web webview:eq(" + (allTabs.length-2) +")"));
 
 	$("#topbar input.activeInput").removeClass("activeInput");
 	$('<input class="activeInput" type="text" placeholder="Type URL or Search Google...">').insertAfter($("#topbar input:eq(" + (allTabs.length-2) +")"));
 
-	$("#topbar input.activeInput").focus();
+	if(url == "https://google.com"){
+		$("#topbar input.activeInput").focus();
+	}
 
 	updateEvents();
 	updateDragWidth();
@@ -110,6 +112,12 @@ function updateEvents(){
 		updateDragWidth();
 	});
 
+	$("#web webview").each(function(index){
+		this.addEventListener("new-window",(e) => {
+			addTab(e.url);
+		});
+	});
+
 	$("#topbar input").off("focus");
 	$("#topbar input").on("focus",function(){
 		$(this)[0].select();
@@ -138,4 +146,7 @@ $("#topbar button.back").on("click",function(){
 });
 $("#topbar button.forward").on("click",function(){
 	$("#web webview.activeWeb")[0].goForward();
+});
+$("#topbar button.reload").on("click",function(){
+	$("#web webview.activeWeb")[0].reload();
 });
