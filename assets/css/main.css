@@ -61,11 +61,12 @@ body {
 }
 
 #tabs {
+	--height: 5vh;
 	display: inline-block;
 	height: 5vh;
 	box-sizing: border-box;
 	border-bottom: 2px solid #ccc;
-	padding: 0 2.5vh;
+	padding: 0 3.5vh;
 	background-color: white;
 }
 #dragArea {
@@ -128,19 +129,19 @@ section#windowBtns button.close:hover{
 
 #tabs div {
 	background-color: #efefef;
-	height: calc(4vh - 2px);
-	padding-left: 1.25vh;
-	margin: 0 1.25vh;
+	height: calc(var(--height) - 2px);
+	padding: 0 1.25vh;
 	box-sizing: border-box;
 	border: 2px solid #ccc;
+	border-top: none;
 	border-bottom: none;
 	display: inline-block;
 	vertical-align: text-top;
-	margin-top: 1vh;
 	float: left;
+	margin-left: -2px;
 }
 #tabs div.activeTab{
-	height: 4vh;
+	height: var(--height);
 	background-color: #fefefe;
 }
 #tabs div.activeTab span:hover{
@@ -151,37 +152,40 @@ section#windowBtns button.close:hover{
 }
 #tabs div h1 {
 	font-weight: normal;
-	font-size: 2.5vh;
-	line-height: calc(4vh - 1px);
+	font-size: 2.375vh;
+	padding-top: 2px;
+	line-height: calc(var(--height) - 2px);
 	display: block;
 	float: left;
 }
 #tabs div span {
 	display: block;
 	float: left;
-	margin: 1vh;
-	margin-top: calc(1vh - 1px);
-	margin-right: none;
-	height: 2vh;
-	width: 2vh;
-	border-radius: 50%;
+	margin: calc(var(--height) / 4);
+	margin-top: calc((var(--height) / 4) - 1px);
+	margin-right: 0;
+	height: calc(var(--height) / 2);
+	width: calc(var(--height) / 2);
 	background-image: url(../img/closeLargeIcon.png);
-	background-size: contain;
+	background-size: 75%;
 	background-position: center;
-	opacity: 0.8;
+	background-repeat: no-repeat;
+	transition: background-color 0.15s;
 }
 #tabs div span:hover{
-	opacity: 0.6;
-	background-image: url(../img/closeLargeHoverIcon.png);
-	background-color: #e00;
+	background-color: #ccc;
 }
+#tabs div span:active{
+	background-color: #bbb;
+}
+
 
 #tabs button.addTab {
 	outline: none;
 	width: 4vh;
-	height: 2.5vh;
-	margin: 0.75vh 0;
-	margin-top: calc(1.75vh - 1px);
+	height: 3vh;
+	margin: 1vh;
+	margin-top: calc(1vh - 0.5px);
 	display: inline-block;
 	float: left;
 	vertical-align: text-top;

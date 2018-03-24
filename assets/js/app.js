@@ -7,7 +7,7 @@ $(function(){
 	if(isMac){
 		$("#dragArea").css("right","0");
 		$("#windowBtns").remove();
-		$("#tabs").attr("style","padding-left: 10vh;");
+		$("#tabs").attr("style","padding-left:12.5vh;");
 	}
 });
 
@@ -49,7 +49,6 @@ function removeTab(index){
 			$("#topbar input:eq(" + (index-1) + ")").addClass("activeInput");
 		}
 	}
-	$("#topbar input.activeInput").focus();
 
 	updateDragWidth();
 }
@@ -72,8 +71,6 @@ function updateEvents(){
 
 		$("#topbar input.activeInput").removeClass("activeInput");
 		$("#topbar input:eq(" + index + ")").addClass("activeInput");
-
-		$("#topbar input.activeInput").focus();
 	});
 
 	$("#topbar input").off("keydown");

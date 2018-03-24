@@ -42,7 +42,7 @@ remote.getCurrentWindow().on('enter-full-screen', function() {
 	$("#tabs").removeAttr("style");
 });
 remote.getCurrentWindow().on('leave-full-screen', function() {
-	$("#tabs").attr("style","padding-left: 10vh;");
+	$("#tabs").attr("style","padding-left:12.5vh;");
 });
 
 Mousetrap.prototype.stopCallback = function(){
