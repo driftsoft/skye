@@ -75,11 +75,51 @@ function updateEvents(){
 
 	$("#topbar input").off("keydown");
 	$("#topbar input").on("keydown",function(e){
+		var searchEngines = [
+			"@twitter",
+			"@google",
+			"@bing",
+			"@github",
+			"@yahoo",
+			"@wikipedia",
+			"@duckduckgo",
+			"@wikihow",
+			"@amazon",
+			"@steam",
+			"@guardian",
+			"@nytimes",
+			"@cnn",
+		];
+		var searchEngineStart = [
+			"http://twitter.com/search?q=",
+			"http://google.com/search?q=",
+			"http://www.bing.com/search?q=",
+			"http://github.com/search?q=",
+			"http://search.yahoo.com/search?q=",
+			"http://en.wikipedia.org/w/index.php?search=",
+			"http://duckduckgo.com/?q=",
+			"https://www.wikihow.com/wikiHowTo?search=",
+			"https://www.amazon.com/s/?field-keywords=",
+			"http://store.steampowered.com/search/?term=",
+			"https://www.google.co.uk/search?as_sitesearch=www.theguardian.com&q=",
+			"https://www.nytimes.com/search/",
+			"https://edition.cnn.com/search/?q="
+		];
+
 		if(e.keyCode == 13){
 			var url = $(this).val();
 
 			if(url.indexOf(" ") != -1 || url.indexOf(".") == -1){
-				url = "http://google.com/search?q=" + url;
+				var searchEngine = searchEngines.indexOf(url.split(" ")[0]);
+				if(searchEngine != -1){
+					url = url.split(" ");
+					url[0] = "";
+					url = url.join(" ");
+					url = url.substring(1);
+					url = searchEngineStart[searchEngine] + url;
+				}else{
+					url = "http://google.com/search?q=" + url;
+				}
 			}
 			if(!url.startsWith("http://") && !url.startsWith("file://") && !url.startsWith("https://")){
 				url = "http://" + url;	
