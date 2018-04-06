@@ -149,10 +149,8 @@ function updateEvents(){
 		updateDragWidth();
 	});
 
-	$("#web webview").each(function(index){
-		this.addEventListener("new-window",(e) => {
-			addTab(e.url);
-		});
+	$("#web webview.activeWeb")[0].addEventListener("new-window",(e) => {
+		addTab(e.url);
 	});
 
 	$("#topbar input").off("focus");

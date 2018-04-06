@@ -14,7 +14,7 @@
   "pack:win64": "electron-packager . $npm_package_productName --out=dist/win --platform=win32 --arch=x64 --version=0.36.2 app-version=1.0 --icon=icon.ico",
   "build": "npm run pack:osx && npm run pack:win32 && npm run pack:win64",
   "devDependencies": {
-    "electron": "~1.7.8",
+    "electron": "^2.0.0",
     "electron-builder": "^20.4.1",
     "electron-packager": "^11.1.0"
   }
